@@ -32,8 +32,9 @@ obj[1]();
 Answer: Yes you can, if you run these lines you'll get "The first property" logged to your console.
 Notice that we invoke the function by adding parenthesis to `obj[1]`, without them all we'll get is the function itself (lines of code, that mean nothing if not executed!).
 
-- And arrays? can a function be a value in array?
-Yes! it can, what is this code doing?
+- And arrays? can a function be a value in an array?
+Yes! it can.
+what is this code doing?
 ```js
 var functionsArray = [function(){console.log("I'm the first value in the array");}, function(){console.log("I'm the second");}, function(){console.log("Hello I'm third");}];
 	functionsArray.forEach(function(fun){
