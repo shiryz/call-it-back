@@ -1,6 +1,6 @@
 # Call it Back
 
-This Readme tries to better introduce the concept of callbacks to those new to it, I assume you have a basic understanding of JavaScript and know what functions are.
+This Readme tries to better introduce the concept of callbacks to those new to it, it assumes you have a basic understanding of JavaScript and know what functions are.
 
 ## Functions all the way
 
