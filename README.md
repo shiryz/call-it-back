@@ -231,4 +231,4 @@ asyncAddOne(1, function(arg){
 ## Done
 
 These are all the basics you need to start hacking some callbacks!
-Use it wisely and worry about callback hell :wink:.
+Use it wisely and don't worry about callback hell :wink:.
