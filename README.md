@@ -148,7 +148,7 @@ thirdFunction(function(){
  
 #### Don't callbacks get arguments too?
 Now that you've mastered callbacks that don't take any arguments, it's time we pass some around :muscle:.
-Let's check out this example
+Let's check this example out
 ```js
 function firstFunction(number){
  console.log("I'm the first function and I expect an input, ", number);
