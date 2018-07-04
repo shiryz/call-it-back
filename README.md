@@ -30,7 +30,7 @@ var obj = {1: function(){ console.log("The first property");}, 2: "string"};
 obj[1]();
 ```
 Answer: Yes you can, if you run these lines you'll get "The first property" logged to your console.
-Notice that we invoke the function by adding parenthesis to `obj[1]`, without them all we'll get is the function itself (lines of code, that mean nothing if not executed!).
+Notice that we invoke the function by adding parentheses to `obj[1]`, without them all we'll get is the function itself (lines of code, that mean nothing if not executed!).
 
 - And arrays? can a function be a value in an array?
 Yes! it can.
@@ -77,3 +77,32 @@ foo(function(){
  	console.log("expected a function, got an anonymous one :|");
 });
 ```
+
+## Funception 
+
+We're going to back up a bit to understand function evaluation, what happens if a function is passed as an argument to another function and that is passed to another function as an argument and so on...
+
+__What's happening here?__ 
+```js
+foo1(foo2(foo3()));
+```
+What's foo1's input? in short it's what is being evaluated in its parentheses or in this case the result of `foo2(foo3())`.
+Same goes for foo2's input which is the result of calling foo3().
+
+Let's try to analyze what the javaScript's interpreter is doing:
+```js
+function foo1(number){
+	return number*3;
+}
+function foo2(string){
+	return Number(string);
+}
+function foo3(){
+	return "1";
+}
+
+foo1(foo2(foo3()));
+```
+If you're familiar with the call stack, then you know that `foo3()` will be called first because it will end up on top of the stack, if not then you should know that evaluation starts from the right most call, which means we'll execute `foo3` first returning `"1"` as an argument to `foo2` then `foo2` will return `1` as a number and lastly `foo1` will get foo2's result and return 1*3.
+
+
