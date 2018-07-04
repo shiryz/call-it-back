@@ -200,6 +200,7 @@ let's break it down:
 Which means that the `log` has already executed while `asyncAddOne` was still waiting in the task queue :no_good:.
 
 __How can it be done then?__
+
 As you might have guessed, it'll be possible to use from within the callback itself...
 ```js
 asyncAddOne(1, function(param){
@@ -227,7 +228,7 @@ asyncAddOne(1, function(arg){
   })
 });
 ```
-#### Done
+## Done
 
 These are all the basics you need to start hacking some callbacks!
 Use it wisely and worry about callback hell :wink:.
