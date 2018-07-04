@@ -1,6 +1,7 @@
 # Call it Back
 
 This Readme tries to better introduce the concept of callbacks to those new to it, it assumes you have a basic understanding of JavaScript and know what functions are.
+To understand it better, I would recommend trying the examples out yourself and even changing some things to get a better sense of what's happening when and how.
 
 ## Functions all the way
 
@@ -103,6 +104,70 @@ function foo3(){
 
 foo1(foo2(foo3()));
 ```
-If you're familiar with the call stack, then you know that `foo3()` will be called first because it will end up on top of the stack, if not then you should know that evaluation starts from the right most call, which means we'll execute `foo3` first returning `"1"` as an argument to `foo2` then `foo2` will return `1` as a number and lastly `foo1` will get foo2's result and return 1*3.
+If you're familiar with the call stack, then you know that `foo3()` will be called first because it will end up on top of the stack, if not then you should know that evaluation starts from the right most call, which means we'll execute `foo3` first returning `"1"` as an argument to `foo2` then `foo2` will return `1` as a number and lastly `foo1` will get foo2's result and return `1*3`.
+
+## Back to callbacks
+
+#### What should I be passing as an argument now? :cold_sweat:
+
+Say we have these 2 functions:
+```js
+function firstFunction(){
+ console.log("I'm the first function");
+}
+
+function secondFunction(callback){
+ callback();
+ console.log("I'm the second function and expect a callback as an input");
+}
+```
+`firstFunction` is just your normal everyday function, while `secondFunction` gets a callback as an argument.
+If you the second function to run properly, you'll have to give it a function and so calling `secondFunction(firstFunction)` will call the first function logging `I'm the first function` then logs `I'm the second function and expect a callback as an input` as expected :hooray:.
+
+Well, that wasn't so hard, let's pick it up a notch with three functions, adding this one:
+```js
+function thirdFunction(callback) {
+ callback();
+ console.log("I'm the third function, I'm also expecting a callback as an input");
+}
+```
+So, what happens when calling `thirdFunction(secondFunction(firstFunction));`?
+Oops! we got an error, `TypeError: callback is not a function at thirdFunction`, but why?
+Well thirdFunction expects a callback and we passed `secondFunction(firstFunction)` which evaluates and returns a `void` (`void` is equivalent to an empty `return;`), or in simpler words this isn't a function!
+
+_How to fix it?_
+We'll have to send a function instead 
+```js
+thirdFunction(function(){
+ secondFunction(firstFunction);
+});
+```
+`thirdFunction` expects a callback (function) so we pass an anonymous one which then does what we need!
+ 
+#### Don't callbacks get arguments too?
+Now that you've mastered callbacks that don't take any arguments, it's time we pass some around :muscle:.
+Let's check out this example
+```js
+function firstFunction(number){
+ console.log("I'm the first function and I expect an input, ", number);
+}
+
+function secondFunction(callback){
+ var number = 1;
+ callback(number);
+ console.log("I'm the second function and expect a callback as an input");
+}
+
+secondFunction(firstFunction);
+```
+`firstFunction` expects an input that's why we have `callback(number)`, you're familiar with the rest :relieved:.
+
+Would this work though? 
+```js 
+secondFunction(firstFunction(1));
+```
+Another Error :sad: `TypeError: callback is not a function at secondFunction`, same error as before, we need a function and not a value.
+
+
 
 
