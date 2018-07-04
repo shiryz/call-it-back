@@ -89,7 +89,7 @@ foo1(foo2(foo3()));
 What's foo1's input? in short it's what is being evaluated in its parentheses or in this case the result of `foo2(foo3())`.
 Same goes for foo2's input which is the result of calling foo3().
 
-Let's try to analyze what the javaScript's interpreter is doing:
+Let's try to analyze what javaScript's interpreter is doing:
 ```js
 function foo1(number){
 	return number*3;
