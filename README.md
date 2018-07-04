@@ -170,6 +170,64 @@ secondFunction(firstFunction(1));
 ```
 Another Error :confused: `TypeError: callback is not a function at secondFunction`, same error as before, we need a function and not a value.
 
+## Time to asynchronous get
 
+You're ready for the hardest part, it's when things get asynchronous and confusing
+Here's an asynchronous function (it's not really async but simulates the same behaviour)
+```js
+function asyncAddOne(x, callBack) {
+ setTimeout(function() {
+   return callBack(x + 1); 
+ }, 200)
+}
+```
+What happens here is the callback will execute after 2 seconds, anything synchronous will execute regardless, this bit of code might make it clearer
+```js 
+var x = 0;
+  asyncAddOne(1, function(param){
+    x = param;
+  });
 
+console.log(x);
+```
+Wait a second, what just happened? it logged 0! 
+let's break it down:
+- we're assigning 0 to x
+- then calling `asyncAddOne` with 1 as an input 
+- the callback assigns the returned value to x
+- x doesn't change :grimacing:
 
+Which means that the `log` has already executed while `asyncAddOne` was still waiting in the task queue :no_good:.
+
+__How can it be done then?__
+As you might have guessed, it'll be possible to use from within the callback itself...
+```js
+asyncAddOne(1, function(param){
+ console.log(param);  
+});
+```
+it works!
+
+Let's double the fun and add another async function
+```js
+function asyncMultiplyThree(x, callBack) {
+ console.log("result from first function ", x);
+ setTimeout(function() {
+   return callBack(x * 3);
+ }, 200)
+}
+```
+Try to multiply the result from the first function using the second function, the result should be 6.
+Again we'll need to pass the result from within the first function's callback, meaning we can only call `asyncMultiplyThree` from `asyncAddOne`'s callback and it looks like this
+
+```js
+asyncAddOne(1, function(arg){
+  return asyncMultiplyThree(arg, function(result){
+    console.log(result);
+  })
+});
+```
+#### Done
+
+These are all the basics you need to start hacking some callbacks!
+Use it wisely and worry about callback hell :wink:.
