@@ -122,7 +122,7 @@ function secondFunction(callback){
 }
 ```
 `firstFunction` is just your normal everyday function, while `secondFunction` gets a callback as an argument.
-If you the second function to run properly, you'll have to give it a function and so calling `secondFunction(firstFunction)` will call the first function logging `I'm the first function` then logs `I'm the second function and expect a callback as an input` as expected :hooray:.
+If you want the second function to run properly, you'll have to give it a function and so calling `secondFunction(firstFunction)` will call the first function logging `I'm the first function` then logs `I'm the second function and expect a callback as an input` as expected :tada:.
 
 Well, that wasn't so hard, let's pick it up a notch with three functions, adding this one:
 ```js
@@ -132,8 +132,10 @@ function thirdFunction(callback) {
 }
 ```
 So, what happens when calling `thirdFunction(secondFunction(firstFunction));`?
+
 Oops! we got an error, `TypeError: callback is not a function at thirdFunction`, but why?
-Well thirdFunction expects a callback and we passed `secondFunction(firstFunction)` which evaluates and returns a `void` (`void` is equivalent to an empty `return;`), or in simpler words this isn't a function!
+
+Well `thirdFunction` expects a callback and we passed `secondFunction(firstFunction)` which evaluates and returns a `void` (`void` is equivalent to an empty `return;`), or in simpler words this isn't a function!
 
 _How to fix it?_
 We'll have to send a function instead 
@@ -166,7 +168,7 @@ Would this work though?
 ```js 
 secondFunction(firstFunction(1));
 ```
-Another Error :sad: `TypeError: callback is not a function at secondFunction`, same error as before, we need a function and not a value.
+Another Error :confused: `TypeError: callback is not a function at secondFunction`, same error as before, we need a function and not a value.
 
 
 
