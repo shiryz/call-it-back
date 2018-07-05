@@ -37,9 +37,13 @@ Notice that we invoke the function by adding parentheses to `obj[1]`, without th
 Yes! it can.
 what is this code doing?
 ```js
-var functionsArray = [function(){console.log("I'm the first value in the array");}, function(){console.log("I'm the second");}, function(){console.log("Hello I'm third");}];
+var functionsArray = [
+function(){console.log("I'm the first value in the array");}, 
+function(){console.log("I'm the second");}, 
+function(){console.log("Hello I'm third");}];
+
 functionsArray.forEach(function(fun){
-	fun();
+ fun();
 });
 ```
 `fun()` will execute all the functions in the array.
@@ -51,7 +55,7 @@ A callback function, also known as a higher-order function, is a function that i
 We already know that a function can do anything any object can do, that also means they can be passed around as arguments, for example:
 ```js
 function foo (myCallBack){
- 	myCallBack();
+  myCallBack();
 }
 ```
 foo expects one argument as an input, this argument needs to be a function, since we call it.
@@ -66,7 +70,7 @@ _How do I send a function though_ :thinking:?
 As mentioned before, functions are objects in every way, so a function definition can be passed as an argument too:
 ```js
 function theCallBack(){
-	console.log("Jack, come back");
+ console.log("Jack, come back");
 }
 foo(theCallBack);
 ```
@@ -75,7 +79,7 @@ Here we can see `theCallBack` passed to foo as an argument and as expected this 
 Another way you can pass a function is by using anonymous functions (a function doesn't have to have a name, same if we pass `3` instead of `x` with a value of 3), this is how it would look like:
 ```js
 foo(function(){
- 	console.log("expected a function, got an anonymous one :|");
+  console.log("expected a function, got an anonymous one :|");
 });
 ```
 
@@ -93,13 +97,13 @@ Same goes for foo2's input which is the result of calling foo3().
 Let's try to analyze what javaScript's interpreter is doing:
 ```js
 function foo1(number){
-	return number*3;
+ return number*3;
 }
 function foo2(string){
-	return Number(string);
+ return Number(string);
 }
 function foo3(){
-	return "1";
+ return "1";
 }
 
 foo1(foo2(foo3()));
