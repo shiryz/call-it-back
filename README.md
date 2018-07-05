@@ -110,6 +110,8 @@ foo1(foo2(foo3()));
 ```
 If you're familiar with the call stack, then you know that `foo3()` will be called first because it will end up on top of the stack, if not then you should know that evaluation starts from the right most call, which means we'll execute `foo3` first returning `"1"` as an argument to `foo2` then `foo2` will return `1` as a number and lastly `foo1` will get foo2's result and return `1*3`.
 
+![Call stack visualisation](https://media.giphy.com/media/5nh6BTAoVp1ewnwtO0/giphy.gif)
+
 ## Back to callbacks
 
 #### What should I be passing as an argument now? :cold_sweat:
