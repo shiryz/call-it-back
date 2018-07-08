@@ -180,7 +180,7 @@ Another Error :confused: `TypeError: callback is not a function at secondFunctio
 
 You're ready for the hardest part, it's when things get asynchronous and confusing
 
-#### First step: Synchronous vs. Asynchronous
+#### Step I: Synchronous vs. Asynchronous
 
 We're used to think about code that runs beautifully, executing line after another making it logical and easy to understand. This is synchronous code, it executes the way we read it.
 
@@ -192,6 +192,29 @@ If you're already thinking that, congratulations you understand what asynchronou
 In a nutshell, 
 - synchronous code waits for 1 action to complete before moving on to the next
 - asynchronous code doesn't have to wait and can execute multiple actions at the same time
+
+#### Step II: A taste of asychronousity
+
+Below we see two logs and we expect the result to be `Hello World` (separated by a new line of course)
+```js
+console.log("Hello");
+console.log("World")'
+```
+
+We'll use `setTimeout` to execute the first log in 3 seconds instead of immediately, the code would look like this:
+```js
+setTimeout(function(){
+ console.log("Hello");
+}, 3000);
+
+console.log("World");
+```
+
+run these lines and you'll get `World` logged before `Hello` because the first log will take 3 seconds to run.
+
+Asynchronous calls work in a similar way, with the difference that we don't know when we'll get the result back.
+
+#### Step III: Dive in
 
 Here's an asynchronous function (it's not really async but simulates the same behaviour)
 ```js
