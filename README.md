@@ -179,6 +179,17 @@ Another Error :confused: `TypeError: callback is not a function at secondFunctio
 ## Time to asynchronous get
 
 You're ready for the hardest part, it's when things get asynchronous and confusing
+
+#### First step: Synchronous vs. Asynchronous
+
+We're used to think about code that runs beautifully, executing line after another making it logical and easy to understand. This is synchronous code, it executes the way we read it.
+Imagine you're baking a cheese cake, the cake has a base and a cheese mix on top, if you'd like to bake this cake synchronously, you would first prepare your base and bake that, wait until it is finished then prepare the cheese, you add the mix on top and then bake it, and if you want to be extra, you'll wait for that to finish baking and prepare some strawberry syrup to pour on top...
+Sounds like lots of things, why not prepare things while the base is baking?
+If you're already thinking that, congratiolations you understand what asynchronous is, it is when you're able to execute other tasks while one (maybe more) is being processed.
+In a nutshell, 
+- synchronous code waits for 1 action to complete before moving on to the next
+- asynchronous code doesn't have to wait and can execute multiple actions at the same time
+
 Here's an asynchronous function (it's not really async but simulates the same behaviour)
 ```js
 function asyncAddOne(x, callBack) {
