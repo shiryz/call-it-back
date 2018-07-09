@@ -182,7 +182,7 @@ You're ready for the hardest part, it's when things get asynchronous and confusi
 
 #### Step I: Synchronous vs. Asynchronous
 
-We're used to think about code that runs beautifully, executing line after another making it logical and easy to understand. This is synchronous code, it executes the way we read it.
+We're used to think about code that runs beautifully, executing one line after another making it logical and easy to understand. This is synchronous code, it executes the way we read it.
 
 Imagine you're baking a cheese cake, the cake has a base and a cheese mix on top, if you'd like to bake this cake synchronously, you would first prepare your base and bake that, wait until it is finished then prepare the cheese, you add the mix on top and then bake it, and if you want to be extra, you'll wait for that to finish baking and prepare some strawberry syrup to pour on top...
 Sounds like lots of things, why not prepare things while the base is baking?
@@ -221,15 +221,15 @@ Here's an asynchronous function (it's not really async but simulates the same be
 function asyncAddOne(x, callBack) {
  setTimeout(function() {
    return callBack(x + 1); 
- }, 200)
+ }, 2000)
 }
 ```
 What happens here is the callback will execute after 2 seconds, anything synchronous will execute regardless, this bit of code might make it clearer
 ```js 
 var x = 0;
-  asyncAddOne(1, function(param){
-    x = param;
-  });
+asyncAddOne(1, function(param){
+  x = param;
+});
 
 console.log(x);
 ```
