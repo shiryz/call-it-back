@@ -141,7 +141,7 @@ So, what happens when calling `thirdFunction(secondFunction(firstFunction));`?
 
 Oops! we got an error, `TypeError: callback is not a function at thirdFunction`, but why?
 
-Well `thirdFunction` expects a callback and we passed `secondFunction(firstFunction)` which evaluates and returns a `void` (`void` is equivalent to an empty `return;`), or in simpler words this isn't a function!
+Well `thirdFunction` expects a callback and we passed `secondFunction(firstFunction)` which evaluates and returns `unfdefined` (every function in javascript returns a value, if no return was explicity called, then `return;` will be added which returns `undefined`), or in simpler words this isn't a function!
 
 _How to fix it?_
 We'll have to send a function instead 
