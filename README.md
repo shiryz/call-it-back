@@ -275,3 +275,10 @@ asyncAddOne(1, function(arg){
 
 These are all the basics you need to start hacking some callbacks!
 Use it wisely and don't worry about callback hell :wink:.
+
+## Still not sure about all that terminology 
+
+Some resources that might help:
+- Sync and Async: https://www.youtube.com/watch?v=YxWMxJONp7E
+- Callbacks: https://www.youtube.com/watch?v=QRq2zMHlBz4
+
