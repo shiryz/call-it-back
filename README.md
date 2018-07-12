@@ -193,7 +193,7 @@ In a nutshell,
 - synchronous code waits for 1 action to complete before moving on to the next
 - asynchronous code doesn't have to wait and can execute multiple actions at the same time
 
-#### Step II: A taste of asychronousity
+#### Step II: A taste of asynchronicity 
 
 Below we see two logs and we expect the result to be `Hello World` (separated by a new line of course)
 ```js
