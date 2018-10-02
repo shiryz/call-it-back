@@ -7,9 +7,9 @@ To understand it better, I would recommend trying the examples out yourself and 
 
 #### Functions can do it all 
 
-- A function is a first-class object.
-- has methods, check https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/prototype#Methods
-- has properties, check https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/prototype#Properties 
+A function is a first-class object:
+- It has methods, check https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/prototype#Methods
+- It has properties, check https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/prototype#Properties 
 - can be assigned to a variable, 
 ```js
 function foo() {...}
