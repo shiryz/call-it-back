@@ -1,7 +1,7 @@
 # Call it Back
 
 This Readme tries to better introduce the concept of callbacks to those new to it, it assumes you have a basic understanding of JavaScript and know what functions are.
-To understand it better, I would recommend trying the examples out yourself and even changing some things to get a better sense of what's happening when and how.
+To understand it better, I would recommend trying the examples out yourself and even changing some of the code to get a better sense of what's happening, when and how.
 
 ## Functions all the way
 
