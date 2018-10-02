@@ -60,7 +60,8 @@ function foo (myCallBack){
 }
 ```
 foo expects one argument as an input, this argument needs to be a function, since we call it.
-trying to execute this line 
+
+Trying to execute this line 
 ```js
 foo("a string");
 ``` 
@@ -109,7 +110,7 @@ function foo3(){
 
 foo1(foo2(foo3()));
 ```
-If you're familiar with the call stack, then you know that `foo3()` will be called first because it will end up on top of the stack, if not then you should know that evaluation starts from the right most call, which means we'll execute `foo3` first returning `"1"` as an argument to `foo2` then `foo2` will return `1` as a number and lastly `foo1` will get foo2's result and return `1*3`.
+If you're familiar with the call stack, then you know that `foo3()` will be called first because it will end up on top of the stack, if not then you should know that evaluation starts from the right most call, which means we'll execute `foo3` first returning `"1"` as an argument to `foo2` then `foo2` will return `1` as a number and lastly `foo1` will get foo2's result and returns `1*3`.
 
 ![Call stack visualisation](https://media.giphy.com/media/5nh6BTAoVp1ewnwtO0/giphy.gif)
 
@@ -129,6 +130,7 @@ function secondFunction(callback){
 }
 ```
 `firstFunction` is just your normal everyday function, while `secondFunction` gets a callback as an argument.
+
 If you want the second function to run properly, you'll have to give it a function and so calling `secondFunction(firstFunction)` will call the first function logging `I'm the first function` then logs `I'm the second function and expect a callback as an input` as expected :tada:.
 
 Well, that wasn't so hard, let's pick it up a notch with three functions, adding this one:
@@ -145,6 +147,7 @@ Oops! we got an error, `TypeError: callback is not a function at thirdFunction`,
 Well `thirdFunction` expects a callback and we passed `secondFunction(firstFunction)` which evaluates and returns `unfdefined` (every function in javascript returns a value, if no return was explicity called, then `return;` will be added which returns `undefined`), or in simpler words this isn't a function!
 
 _How to fix it?_
+
 We'll have to send a function instead 
 ```js
 thirdFunction(function(){
@@ -155,6 +158,7 @@ thirdFunction(function(){
  
 #### Don't callbacks get arguments too?
 Now that you've mastered callbacks that don't take any arguments, it's time we pass some around :muscle:.
+
 Let's check this example out
 ```js
 function firstFunction(number){
@@ -186,7 +190,8 @@ You're ready for the hardest part, it's when things get asynchronous and confusi
 We're used to think about code that runs beautifully, executing one line after another making it logical and easy to understand. This is synchronous code, it executes the way we read it.
 
 Imagine you're baking a cheese cake, the cake has a base and a cheese mix on top, if you'd like to bake this cake synchronously, you would first prepare your base and bake that, wait until it is finished then prepare the cheese, you add the mix on top and then bake it, and if you want to be extra, you'll wait for that to finish baking and prepare some strawberry syrup to pour on top...
-Sounds like lots of things, why not prepare things while the base is baking?
+
+Sounds like too many things, why not prepare things while the base is baking?
 
 If you're already thinking that, congratulations you understand what asynchronous is, it is when you're able to execute other tasks while one (maybe more) is being processed.
 
@@ -235,6 +240,7 @@ asyncAddOne(1, function(param){
 console.log(x);
 ```
 Wait a second, what just happened? it logged 0! 
+
 let's break it down:
 - we're assigning 0 to x
 - then calling `asyncAddOne` with 1 as an input 
