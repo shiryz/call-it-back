@@ -34,8 +34,9 @@ Answer: Yes you can, if you run these lines you'll get "The first property" logg
 Notice that we invoke the function by adding parentheses to `obj[1]`, without them all we'll get is the function itself (lines of code, that mean nothing if not executed!).
 
 - And arrays? can a function be a value in an array?
+
 Yes! it can.
-what is this code doing?
+What is this code doing?
 ```js
 var functionsArray = [
 function(){console.log("I'm the first value in the array");}, 
