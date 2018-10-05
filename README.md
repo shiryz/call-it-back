@@ -286,6 +286,8 @@ Use it wisely and don't worry about callback hell :wink:.
 ## Still not sure about all that terminology 
 
 Some resources that might help:
-- Sync and Async: https://www.youtube.com/watch?v=YxWMxJONp7E
+- Sync and Async: 
+  - https://www.youtube.com/watch?v=YxWMxJONp7E
+  - https://stackoverflow.com/questions/748175/asynchronous-vs-synchronous-execution-what-does-it-really-mean
 - Callbacks: https://www.youtube.com/watch?v=QRq2zMHlBz4
 
