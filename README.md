@@ -5,7 +5,7 @@
 2. [Higher Order Functions](#higher-order-functions)
 3. [Synchronous Callbacks](#synchronous-callbacks)
 4. [Asynchronous Callbacks](#asynchronous-callbacks)
-5. [(Optional) Callback Patterns](#optional-callback-patterns-on-the-way-to-callback-hell)
+5. [(Optional) Chaining Callbacks](#optional-chaining-callbacks-on-the-way-to-callback-hell-)
 6. [More Resources](#still-not-sure-about-all-that-terminology)
 
 This resource tries to better introduce the concept of callbacks to those new to it, it assumes you have a basic understanding of JavaScript and know what functions are.
@@ -72,7 +72,7 @@ functionsArray.forEach(function(fun){
 ## Higher Order Functions
 A callback function, also known as a **higher-order function**, is a function that is passed as an argument to another function.
 
-We already know that a [function can do anything any object can do](#functions-as-a-1st-class-object), that also means they can be passed around as arguments!
+We already know that a [function can do anything any object can do](#functions-as-1st-class-objects), that also means they can be passed around as arguments!
 
 ### Pass a function into another and call it
 Let's say we have this simple function:
@@ -98,7 +98,7 @@ function theCallBack () {
 }
 run(theCallBack);
 ```
-Here we can see `theCallBack` passed to `run` as an argument and as expected this will log `Jack, come back`. Remember that this WONT WORK:
+Here we can see `theCallBack` passed to `run` as an argument and as expected this will log `Jack, come back`.
 
 Another way you can pass a function is by using anonymous functions:
 ```js
