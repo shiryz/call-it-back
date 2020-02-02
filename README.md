@@ -70,7 +70,8 @@ functionsArray.forEach(function(fun){
 </details>
 
 ## Higher Order Functions
-A callback function, also known as a **higher-order function**, is a function that is passed as an argument to another function.
+A **callback function**, is a function that is passed as an argument to another function.
+A **higher-order function** is a function that takes a callback or return another function.
 
 We already know that a [function can do anything any object can do](#functions-as-1st-class-objects), that also means they can be passed around as arguments!
 
