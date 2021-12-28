@@ -14,9 +14,9 @@ To understand it better, try the examples out yourself and even change some of t
 
 ## Functions as 1st Class Objects
 The term "1st Class Object" might not be very clear. All it means is that everything you can do with an object, you can also do with a function. For example, a function:
-- has methods (see [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/prototype#Methods))
-- has properties (see [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/prototype#Properties))
-- can be assigned to a variable:
+- Has methods (see [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/prototype#Methods))
+- Has properties (see [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/prototype#Properties))
+- Can be assigned to a variable:
 
 ```js
 function foo() {...}
